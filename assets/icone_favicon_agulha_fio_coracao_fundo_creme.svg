@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+<title id="title">Ícone do Ateliê Doce Encanto</title>
+<desc id="desc">Agulha em carvão, fio rosa em coração e fundo rosa claro.</desc>
+<rect width="512" height="512" rx="112" fill="#FFF8F5"/>
+<circle cx="256" cy="256" r="226" fill="none" stroke="#E95F78" stroke-width="12"/>
+<path d="M120 382 L250 124 C260 103 270 87 282 73 L305 85 C296 105 285 126 272 148 L139 394 Z" fill="#2B2B2B"/>
+<ellipse cx="297" cy="82" rx="30" ry="57" transform="rotate(29 297 82)" fill="none" stroke="#2B2B2B" stroke-width="16"/>
+<path d="M255 104 C340 72 393 135 374 205 C361 251 320 279 303 319 C288 355 318 389 354 367 C387 347 399 311 382 288" fill="none" stroke="#E95F78" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M356 414 C325 392 329 363 347 360 C359 358 369 366 374 378 C382 365 394 358 406 363 C429 373 421 400 374 432 Z" fill="#E95F78"/>
+</svg>

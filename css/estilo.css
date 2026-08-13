@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Ateliê Doce Encanto — folha de estilo principal
+   Paleta e tipografia conforme o Guia de Identidade Visual da marca.
+   ========================================================================== */
+
+:root{
+  --rosa:#E95F78;
+  --rosa-escuro:#B03A52;
+  --carvao:#2B2B2B;
+  --branco:#FFFFFF;
+  --creme:#FFF8F5;
+  --blush:#FBE8EC;
+  --grafite:#5A5557;
+
+  --serif:"Bodoni Moda",Georgia,serif;
+  --sans:"Montserrat",system-ui,-apple-system,sans-serif;
+
+  --maxw:1160px;
+  --radius:14px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
+  color:var(--carvao);
+  background:var(--branco);
+}
+img{max-width:100%;display:block}
+a{color:var(--rosa);text-decoration:none}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.22}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rosa);margin-bottom:14px}
+.sec{padding:88px 0}
+.sec.creme{background:var(--creme)}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+h2 em{color:var(--rosa)}
+.lead{color:var(--grafite);max-width:62ch;font-size:1.03rem}
+.pular{position:absolute;left:-9999px}
+.pular:focus{left:16px;top:12px;z-index:99;background:#fff;padding:10px 18px;border-radius:8px}
+
+/* ---------- cabeçalho ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--blush);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  max-width:var(--maxw);margin:0 auto;padding:12px 24px;
+}
+.nav img{height:78px;width:auto}
+.menu{display:flex;gap:26px;align-items:center}
+.menu a{color:var(--carvao);font-size:.9rem;letter-spacing:.02em}
+.menu a:hover{color:var(--rosa)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--rosa);color:#fff;padding:13px 26px;border-radius:999px;
+  font-size:.9rem;font-weight:600;letter-spacing:.02em;min-height:44px;
+  transition:background .2s,transform .2s;
+}
+.btn:hover{background:var(--rosa-escuro);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--rosa);border:1.5px solid var(--rosa)}
+.btn.ghost:hover{background:var(--blush);color:var(--rosa-escuro)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:4px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--creme);padding:72px 0 84px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,5.2vw,3.6rem)}
+.hero h1 em{color:var(--rosa)}
+.hero p{color:var(--grafite);font-size:1.08rem;margin:22px 0 32px;max-width:48ch}
+.hero-acoes{display:flex;gap:14px;flex-wrap:wrap}
+.selos{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}
+.selo{
+  background:var(--blush);color:var(--rosa-escuro);font-size:.72rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:7px 14px;border-radius:999px;
+}
+.hero .foto{aspect-ratio:1/1;border-radius:200px 200px var(--radius) var(--radius)}
+
+/* ---------- caixa de foto ----------
+   Enquanto o arquivo em /fotos não existir, aparece o espaço pontilhado
+   com o nome do arquivo esperado. Assim que a foto for adicionada com o
+   nome correto, ela substitui o espaço automaticamente.                     */
+.foto{
+  position:relative;aspect-ratio:4/3;overflow:hidden;
+  border-radius:var(--radius);background:var(--blush);
+}
+.foto img{width:100%;height:100%;object-fit:cover}
+.foto .vazio{display:none}
+.foto.sem-foto{border:1.5px dashed var(--rosa);display:grid;place-items:center}
+.foto.sem-foto img{display:none}
+.foto.sem-foto .vazio{
+  display:grid;place-items:center;gap:8px;text-align:center;padding:16px;
+}
+.foto.sem-foto .vazio img{display:block;width:56px;opacity:.45;margin:0 auto}
+.foto.sem-foto .vazio b{
+  font-size:.72rem;letter-spacing:.12em;color:var(--rosa-escuro);
+  text-transform:uppercase;font-weight:600;
+}
+.foto.sem-foto .vazio small{font-size:.72rem;color:var(--grafite)}
+
+/* ---------- produtos ---------- */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+.produto{
+  background:#fff;border:1px solid var(--blush);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:box-shadow .25s,transform .25s;
+}
+.produto:hover{box-shadow:0 14px 34px rgba(233,95,120,.14);transform:translateY(-3px)}
+.produto .foto{border-radius:0}
+.produto-txt{padding:22px 24px 26px}
+.produto h3{font-size:1.25rem;margin-bottom:8px}
+.produto p{color:var(--grafite);font-size:.92rem;margin:0 0 14px}
+.link{font-size:.86rem;font-weight:600}
+
+/* ---------- sobre ---------- */
+.sobre{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.sobre p{color:var(--grafite)}
+.simb-deco{width:54px;opacity:.9;margin-bottom:18px}
+
+/* ---------- processo ---------- */
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.passo{background:#fff;border:1px solid var(--blush);border-radius:var(--radius);padding:28px 26px}
+.passo .n{font-family:var(--serif);font-size:2rem;color:var(--rosa);line-height:1}
+.passo h3{font-size:1.1rem;margin:10px 0 8px}
+.passo p{color:var(--grafite);font-size:.9rem;margin:0}
+
+/* ---------- depoimentos ---------- */
+.depos{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+.depo{background:var(--creme);border-radius:var(--radius);padding:30px 28px;border:1px solid var(--blush)}
+.depo p{font-style:italic;color:var(--grafite);margin:0 0 14px}
+.depo cite{font-style:normal;color:var(--rosa);font-size:.86rem}
+
+/* ---------- contato ---------- */
+.contato{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.dados{list-style:none;padding:0;margin:26px 0 0}
+.dados li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--blush);font-size:.98rem}
+.dados b{font-weight:600;min-width:104px;color:var(--rosa)}
+.selo-img{width:min(300px,80%);margin:0 auto}
+
+/* ---------- rodapé ---------- */
+footer{background:var(--carvao);color:#D8D2D4;padding:56px 0 34px;font-size:.88rem}
+footer img{width:260px;margin-bottom:26px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+footer a{color:#F7A9B8}
+footer h4{color:#fff;font-family:var(--serif);font-weight:500;font-size:1rem;margin:0 0 12px}
+.copy{
+  border-top:1px solid #3D3A3B;margin-top:36px;padding-top:22px;color:#9C9496;
+  font-size:.8rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+
+/* ---------- botão flutuante ---------- */
+.zap{
+  position:fixed;right:20px;bottom:20px;z-index:60;background:#25D366;color:#fff;
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.zap svg{width:30px;height:30px;fill:#fff}
+
+/* ---------- responsivo ---------- */
+@media (max-width:960px){
+  .grid,.passos,.depos{grid-template-columns:repeat(2,1fr)}
+  .hero-grid,.sobre,.contato{grid-template-columns:1fr;gap:38px}
+  .foot{grid-template-columns:1fr 1fr}
+  .menu a:not(.btn){display:none}
+  .nav img{height:52px}
+}
+@media (max-width:620px){
+  .sec{padding:62px 0}
+  .grid,.passos,.depos,.foot{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;scroll-behavior:auto !important}
+}
