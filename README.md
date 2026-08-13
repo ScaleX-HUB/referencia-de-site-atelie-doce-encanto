@@ -14,8 +14,9 @@ Site estático: HTML e CSS puros, sem build, sem dependências e sem framework.
 ├── index.html                        página única do site
 ├── css/estilo.css                    estilos, cores e tipografia da marca
 ├── assets/                           logos, símbolo, favicon e imagem social (kit da marca)
-├── fotos/                            → COLOQUE AQUI AS FOTOS DAS PEÇAS
-│   └── LEIA-ME.md                    nomes exatos dos arquivos e dicas de fotografia
+├── fotos/                            fotos das peças (33 imagens otimizadas)
+│   ├── thumbs/                       miniaturas usadas na galeria
+│   └── LEIA-ME.md                    como acrescentar ou trocar fotos
 ├── docs_guia_identidade_visual.md    guia de identidade visual original da marca
 ├── .github/workflows/deploy.yml      publicação automática no GitHub Pages
 ├── .nojekyll                         evita que o Pages ignore arquivos
@@ -24,11 +25,12 @@ Site estático: HTML e CSS puros, sem build, sem dependências e sem framework.
 
 ## Fotos das peças
 
-O site já está pronto, mas **ainda não tem fotos das peças**. Enquanto um arquivo não
-existir na pasta `fotos/`, o site mostra um espaço pontilhado com o nome esperado.
+As 33 fotos das peças já estão em `fotos/` (otimizadas, máx. 1200 px) e as miniaturas da
+galeria em `fotos/thumbs/` (máx. 620 px). Para acrescentar ou trocar fotos, veja
+[`fotos/LEIA-ME.md`](fotos/LEIA-ME.md).
 
-Para preencher, basta salvar a imagem em `fotos/` com o nome exato da lista em
-[`fotos/LEIA-ME.md`](fotos/LEIA-ME.md). A troca é automática — nenhum código muda.
+Se um arquivo referenciado não existir, o site mostra um espaço pontilhado no lugar,
+sem quebrar o layout.
 
 ## Publicar no GitHub Pages
 
